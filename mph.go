@@ -124,6 +124,10 @@ func (t *Table) Query(k string) int32 {
 	return t.values[i]
 }
 
+func (t *Table) Dump() ([]int32, []int32) {
+	return t.values, t.seeds
+}
+
 func xorshiftMult64(x uint64) uint64 {
 	x ^= x >> 12 // a
 	x ^= x << 25 // b

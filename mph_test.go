@@ -3,6 +3,7 @@ package mph
 import (
 	"bufio"
 	"flag"
+	"log"
 	"os"
 	"testing"
 )
@@ -52,6 +53,9 @@ func TestMPH(t *testing.T) {
 			t.Errorf("Lookup(%q)=%v, want %v", k, got, i)
 		}
 	}
+
+	values, seeds := tab.Dump()
+	log.Printf("values=%d seeds=%d\n", values, seeds)
 }
 
 var sink int32
